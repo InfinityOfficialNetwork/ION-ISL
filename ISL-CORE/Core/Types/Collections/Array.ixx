@@ -42,7 +42,7 @@ export namespace ION::Core::Types::Collections {
 			}
 		}
 
-		constexpr inline ~Array() {
+		constexpr virtual inline ~Array() {
 			for (size_t i = 0; i < Size; i++)
 			{
 				ElementAlloc.DeAllocate(Elements[i]);

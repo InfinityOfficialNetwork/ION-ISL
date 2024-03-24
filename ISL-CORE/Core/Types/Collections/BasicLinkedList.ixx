@@ -10,11 +10,11 @@ export namespace ION::Core::Types::Collections
 	template <
 		typename T,
 		template <typename> typename Allocator = ION::Core::Memory::Allocator,
-		int NodeSize = 16
+		int KiloNodeSize = 16
 	>
 	class BasicLinkedList : public Object
 	{
-		class Node : public Object, public StaticArray<T, NodeSize>
+		class Node : public Object, public StaticArray<T, KiloNodeSize>
 		{
 		public:
 			size_t Index;
@@ -23,11 +23,11 @@ export namespace ION::Core::Types::Collections
 
 			inline constexpr Node ()
 			{
-				StaticArray<T, NodeSize> ();
+				StaticArray<T, KiloNodeSize> ();
 			}
 		};
 
-		const int nodeSize = NodeSize;
+		const int nodeSize = KiloNodeSize;
 
 		Memory::BasicPointer<Node> StartNode;
 

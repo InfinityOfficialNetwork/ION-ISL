@@ -2,6 +2,7 @@ export module ION.Tests.TestRunner;
 
 import ION.Tests.Types.Collections.StaticArrayTest;
 import ION.Tests.Types.Collections.ArrayTest;
+import ION.Tests.Types.Collections.BasicLinkedListTest;
 import ION.Tests.Types.Collections.LinkedListTest;
 import ION.Tests.TestBase;
 import std;
@@ -45,6 +46,7 @@ export namespace ION::Tests
 			//AddTest();
 			AddTest (new ION::Tests::Types::Collections::StaticArrayTest ());
 			AddTest (new ION::Tests::Types::Collections::ArrayTest ());
+			AddTest (new ION::Tests::Types::Collections::BasicLinkedListTest ());
 			AddTest (new ION::Tests::Types::Collections::LinkedListTest ());
 		}
 	};

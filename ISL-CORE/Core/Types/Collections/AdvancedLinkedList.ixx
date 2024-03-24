@@ -10,7 +10,7 @@ export namespace ION::Core::Types::Collections
 	template <
 		typename T,
 		template <typename> typename Alloc = ION::Core::Memory::Allocator,
-		int NodeSize = 16
+		int KiloNodeSize = 16
 	>
 	class AdvancedLinkedList : public Object
 	{
@@ -19,7 +19,7 @@ export namespace ION::Core::Types::Collections
 
 		};
 
-		class MegaNode : public Object, public Array<T, Alloc>
+		class KiloNode : public Object, public Array<T, Alloc>
 		{
 
 		};

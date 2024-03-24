@@ -1,20 +1,20 @@
-export module ION.Tests.Types.Collections.LinkedListTest;
+export module ION.Tests.Types.Collections.BasicLinkedListTest;
 
 import std;
 export import ION.Tests.TestBase;
-export import ION.Core.Types.Collections.LinkedList;
+export import ION.Core.Types.Collections.BasicLinkedList;
 
 export namespace ION::Tests::Types::Collections
 {
-	class LinkedListTest : public TestBase
+	class BasicLinkedListTest : public TestBase
 	{
 	public:
-		LinkedListTest () : TestBase ()
+		BasicLinkedListTest () : TestBase ()
 		{
 			this->Name = "ION.Core.Types.Collections.ArrayTest";
 			this->AddTest (new SmallSet1 ());
 			this->AddTest (new SmallSet2 ());
-			//this->AddTest (new LargeSet1 ());
+			this->AddTest (new LargeSet1 ());
 		}
 
 		class SmallSet1 : public TestBase::Test
@@ -24,7 +24,7 @@ export namespace ION::Tests::Types::Collections
 				{
 					//BEGIN TEST
 
-					ION::Core::Types::Collections::LinkedList<int> TestItem;
+					ION::Core::Types::Collections::BasicLinkedList<int> TestItem;
 
 					for (size_t i = 0; i < 100; i++)
 					{
@@ -68,7 +68,7 @@ export namespace ION::Tests::Types::Collections
 				{
 					//BEGIN TEST
 
-					ION::Core::Types::Collections::LinkedList<int> TestItem;
+					ION::Core::Types::Collections::BasicLinkedList<int> TestItem;
 
 					for (size_t i = 0; i < 100; i++)
 					{
@@ -105,55 +105,55 @@ export namespace ION::Tests::Types::Collections
 			}
 		};
 
-		//class LargeSet1 : public TestBase::Test
-		//{
-		//	virtual Result Invoke () override try
-		//	{
-		//		{
-		//			//BEGIN TEST
+		class LargeSet1 : public TestBase::Test
+		{
+			virtual Result Invoke () override try
+			{
+				{
+					//BEGIN TEST
 
-		//			const int KiloNodeSize = 1024 * 16;
-		//			const int MaxSize = 1'000'000;
-		//			ION::Core::Types::Collections::LinkedList<int, Core::Memory::Allocator, KiloNodeSize> TestItem;
+					const int KiloNodeSize = 1024 * 16;
+					const int MaxSize = 1'000'000;
+					ION::Core::Types::Collections::BasicLinkedList<int, Core::Memory::Allocator, KiloNodeSize> TestItem;
 
-		//			for (size_t i = 0; i < MaxSize; i++)
-		//			{
-		//				TestItem += i;
-		//			}
+					for (size_t i = 0; i < MaxSize; i++)
+					{
+						TestItem += i;
+					}
 
-		//			for (size_t i = 0; i < MaxSize; i++)
-		//			{
-		//				if (TestItem[i] != i)
-		//				{
-		//					throw ION::Core::Exception ("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
-		//				}
-		//			}
+					for (size_t i = 0; i < MaxSize; i++)
+					{
+						if (TestItem[i] != i)
+						{
+							throw ION::Core::Exception ("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
+						}
+					}
 
-		//			//TestItem.~BasicLinkedList();
+					//TestItem.~BasicLinkedList();
 
-		//			int i;
+					int i;
 
-		//			//END TEST
-		//		}
-		//		return Result (Result::ResultCode::SUCCESS, ION::Core::Exception ("NO_ERROR"));
-		//	}
-		//	catch (const ION::Core::Exception& e)
-		//	{
-		//		return Result (Result::ResultCode::FAIL, e);
-		//	}
-		//	catch (const std::exception& e)
-		//	{
-		//		return Result (Result::ResultCode::FAIL, ION::Core::Exception (e.what ()));
-		//	}
-		//	catch (const char* e)
-		//	{
-		//		return Result (Result::ResultCode::FAIL, ION::Core::Exception (std::string (e)));
-		//	}
-		//	catch (...)
-		//	{
-		//		return Result (Result::ResultCode::FAIL, ION::Core::Exception ("UNKNOWN_ERROR"));
-		//	}
-		//};
+					//END TEST
+				}
+				return Result (Result::ResultCode::SUCCESS, ION::Core::Exception ("NO_ERROR"));
+			}
+			catch (const ION::Core::Exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, e);
+			}
+			catch (const std::exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (e.what ()));
+			}
+			catch (const char* e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (std::string (e)));
+			}
+			catch (...)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception ("UNKNOWN_ERROR"));
+			}
+		};
 
 	};
 }

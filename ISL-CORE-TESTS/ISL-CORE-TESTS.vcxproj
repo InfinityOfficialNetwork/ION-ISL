@@ -152,6 +152,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Program.ixx" />
     <ClCompile Include="Tests\Types\Collections\ArrayTest.ixx" />
+    <ClCompile Include="Tests\Types\Collections\BasicLinkedListTest.ixx" />
     <ClCompile Include="Tests\Types\Collections\LinkedListTest.ixx" />
     <ClCompile Include="Tests\Types\Collections\StaticArrayTestixx.ixx" />
   </ItemGroup>

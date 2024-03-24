@@ -33,6 +33,9 @@
     <ClCompile Include="Tests\Types\Collections\ArrayTest.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tests\Types\Collections\BasicLinkedListTest.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Tests\Types\Collections\LinkedListTest.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
