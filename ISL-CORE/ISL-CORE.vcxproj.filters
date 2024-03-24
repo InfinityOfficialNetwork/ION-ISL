@@ -63,5 +63,8 @@
     <ClCompile Include="Core\Types\Functor.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Types\Collections\LinkedList.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

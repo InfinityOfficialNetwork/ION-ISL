@@ -8,61 +8,71 @@ export import ION.Core.Compiler.Source.Location;
 export import ION.Core.Memory.BasicPointer;
 export import ION.Core.Memory.Allocator;
 
-export namespace ION::Core::Memory {
+export namespace ION::Core::Memory
+{
 	template <typename T>
-	class Mallocator : public Object, Allocator<T> {
+	class Mallocator : public Object, Allocator<T>
+	{
 	public:
-		Mallocator() {}
-		~Mallocator() {}
+		Mallocator ()
+		{}
+		~Mallocator ()
+		{}
 
-		virtual constexpr T* Allocate() const override {
+		virtual constexpr T* Allocate () const override
+		{
 			T* ptr;
 			try
 			{
-				ptr = (T*)std::malloc(sizeof(T));
+				ptr = (T*) std::malloc (sizeof (T));
 			}
 			catch (const std::exception&)
 			{
-				throw AllocationException(Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+				throw AllocationException (Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 			}
 			if (!ptr)
 			{
-				throw AllocationException(Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+				throw AllocationException (Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 			}
 			return ptr;
 		}
 
-		virtual constexpr T* Allocate(int Size) const override {
+		virtual constexpr T* Allocate (int Size) const override
+		{
 			T* ptr;
 			try
 			{
-				ptr = (T*)std::malloc(sizeof(T) * Size);
+				ptr = (T*) std::malloc (sizeof (T) * Size);
 			}
 			catch (const std::bad_alloc&)
 			{
-				throw AllocationException(Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+				throw AllocationException (Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 			}
 			if (!ptr)
 			{
-				throw AllocationException(Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+				throw AllocationException (Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 			}
 			return ptr;
 		}
 
-		inline virtual const constexpr void DeAllocate(T* ptr) const override {
-			std::free((void*)ptr);
+		inline virtual const constexpr void DeAllocate (T* ptr) const override
+		{
+			std::free ((void*) ptr);
 		}
 
-		inline virtual const constexpr void DeAllocate(T* ptr, int size) const override {
-			std::free((void*)ptr);
+		inline virtual const constexpr void DeAllocate (T* ptr, int size) const override
+		{
+			std::free ((void*) ptr);
 		}
 
-		inline virtual const constexpr void DeAllocate(BasicPointer<T>& ptr) const override {
-			std::free((void*)&(*ptr));
+		inline virtual const constexpr void DeAllocate (BasicPointer<T>& ptr) const override
+		{
+			std::free ((void*) &(*ptr));
 		}
 
-		inline virtual const constexpr void DeAllocate(BasicPointer<T>& ptr, int size) const override {
-			std::free((void*)&(*ptr));
+		inline virtual const constexpr void DeAllocate (BasicPointer<T>& ptr, int size) const override
+		{
+			std::free ((void*) &(*ptr));
 		}
 	};
 }

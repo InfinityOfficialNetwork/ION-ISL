@@ -1,4 +1,4 @@
-export module ION.Core.Types.Collections.AdvancedLinkedList;
+export module ION.Core.Types.Collections.LinkedList;
 
 export import ION.Core.Object;
 export import ION.Core.Memory.Allocator;
@@ -12,7 +12,7 @@ export namespace ION::Core::Types::Collections
 		template <typename> typename Alloc = ION::Core::Memory::Allocator,
 		int NodeSize = 16
 	>
-	class AdvancedLinkedList : public Object
+	class LinkedList : public Object
 	{
 		class Node : public Object, public Array<T, Alloc>
 		{

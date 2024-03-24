@@ -192,6 +192,7 @@
     <ClCompile Include="Core\Memory\SharedPointer.ixx" />
     <ClCompile Include="Core\Memory\UniquePointer.ixx" />
     <ClCompile Include="Core\Object.ixx" />
+    <ClCompile Include="Core\Types\Collections\LinkedList.ixx" />
     <ClCompile Include="Core\Types\Collections\StaticArray.ixx" />
     <ClCompile Include="Core\Types\Functor.ixx" />
     <ClCompile Include="main.ixx" />

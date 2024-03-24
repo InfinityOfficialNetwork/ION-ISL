@@ -4,7 +4,7 @@
 import ION.Tests.Program;
 
 //Main bootstrapper
-int main()
+int main ()
 {
-    return ION::Tests::Program::Main();
+	return ION::Tests::Program::Main ();
 }

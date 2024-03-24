@@ -3,23 +3,27 @@ export module ION.Core.Memory.SharedPointer;
 export import ION.Core.Memory.Allocator;
 export import ION.Core.Memory.BasicPointer;
 
-export namespace ION::Core::Memory {
+export namespace ION::Core::Memory
+{
 	template <typename T>
-	class SharedPointer : public Object, BasicPointer<T> {
+	class SharedPointer : public Object, BasicPointer<T>
+	{
 	public:
-		const constexpr inline SharedPointer(T* instance, Allocator<T>* deAllocator) : BasicPointer<T>(instance), DeAllocator(deAllocator)
+		const constexpr inline SharedPointer (T* instance, Allocator<T>* deAllocator) : BasicPointer<T> (instance), DeAllocator (deAllocator)
 		{
 			Control.ReferenceCount = 0;
 			ControlRef = &Control;
 		}
-		const constexpr inline SharedPointer(BasicPointer<T> ptr, Allocator<T>* deAllocator) : BasicPointer<T>(&(*ptr)), DeAllocator(deAllocator)
+		const constexpr inline SharedPointer (BasicPointer<T> ptr, Allocator<T>* deAllocator) : BasicPointer<T> (&(*ptr)), DeAllocator (deAllocator)
 		{
 			Control.ReferenceCount = 0;
 			ControlRef = &Control;
 		}
-		~SharedPointer() {
-			if (Control->ReferenceCount == 0) {
-				DeAllocator->DeAllocate(this->Instance);
+		~SharedPointer ()
+		{
+			if (Control->ReferenceCount == 0)
+			{
+				DeAllocator->DeAllocate (this->Instance);
 			}
 		}
 
@@ -30,7 +34,8 @@ export namespace ION::Core::Memory {
 	protected:
 		Allocator<T>* DeAllocator;
 
-		struct ControlBlock : public Object {
+		struct ControlBlock : public Object
+		{
 			int ReferenceCount = 0;
 		};
 
@@ -39,6 +44,6 @@ export namespace ION::Core::Memory {
 		ControlBlock Control;
 
 	private:
-		SharedPointer(const SharedPointer& o);
+		SharedPointer (const SharedPointer& o);
 	};
 }

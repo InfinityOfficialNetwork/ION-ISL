@@ -9,14 +9,13 @@ export import ION.Core.Memory.BasicPointer;
 export namespace ION::Core::Types::Collections {
 	template <
 		typename T,
-		typename ArrayAllocator = ION::Core::Memory::Allocator<T*>,
-		typename ElementAllocator = ION::Core::Memory::Allocator<T>
+		template <typename> typename Alloc = ION::Core::Memory::Allocator
 	>
 	class Array : public Object {
 	public:
 		constexpr inline Array(int size) : Size(size) {
-			ArrayAlloc = ArrayAllocator();
-			ElementAlloc = ElementAllocator();
+			ArrayAlloc = Alloc<T*>();
+			ElementAlloc = Alloc<T>();
 			try
 			{
 				Elements = ArrayAlloc.Allocate(Size);
@@ -57,8 +56,8 @@ export namespace ION::Core::Types::Collections {
 
 	protected:
 		int Size;
-		ArrayAllocator ArrayAlloc;
-		ElementAllocator ElementAlloc;
+		Alloc<T*> ArrayAlloc;
+		Alloc<T> ElementAlloc;
 		T** Elements;
 
 	};

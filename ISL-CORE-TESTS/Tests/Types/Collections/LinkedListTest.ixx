@@ -4,19 +4,23 @@ import std;
 export import ION.Tests.TestBase;
 export import ION.Core.Types.Collections.BasicLinkedList;
 
-export namespace ION::Tests::Types::Collections {
-	class LinkedListTest : public TestBase {
+export namespace ION::Tests::Types::Collections
+{
+	class LinkedListTest : public TestBase
+	{
 	public:
-		LinkedListTest() : TestBase()
+		LinkedListTest () : TestBase ()
 		{
 			this->Name = "ION.Core.Types.Collections.ArrayTest";
-			this->AddTest(new SmallSet1());
-			this->AddTest(new SmallSet2());
-			this->AddTest(new LargeSet1());
+			this->AddTest (new SmallSet1 ());
+			this->AddTest (new SmallSet2 ());
+			this->AddTest (new LargeSet1 ());
 		}
 
-		class SmallSet1 : public TestBase::Test {
-			virtual Result Invoke() override try {
+		class SmallSet1 : public TestBase::Test
+		{
+			virtual Result Invoke () override try
+			{
 				{
 					//BEGIN TEST
 
@@ -29,31 +33,38 @@ export namespace ION::Tests::Types::Collections {
 
 					for (size_t i = 0; i < 100; i++)
 					{
-						if (TestItem[i] != i) {
-							throw ION::Core::Exception("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+						if (TestItem[i] != i)
+						{
+							throw ION::Core::Exception ("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 						}
 					}
 
 					//END TEST
 				}
-				return Result(Result::ResultCode::SUCCESS, ION::Core::Exception("NO_ERROR"));
+				return Result (Result::ResultCode::SUCCESS, ION::Core::Exception ("NO_ERROR"));
 			}
-			catch (const ION::Core::Exception& e) {
-				return Result(Result::ResultCode::FAIL, e);
+			catch (const ION::Core::Exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, e);
 			}
-			catch (const std::exception& e) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception(e.what()));
+			catch (const std::exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (e.what ()));
 			}
-			catch (const char* e) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception(std::string(e)));
+			catch (const char* e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (std::string (e)));
 			}
-			catch (...) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception("UNKNOWN_ERROR"));
+			catch (...)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception ("UNKNOWN_ERROR"));
 			}
 		};
 
-		class SmallSet2 : public TestBase::Test {
-			virtual Result Invoke() override try {
+		class SmallSet2 : public TestBase::Test
+		{
+			virtual Result Invoke () override try
+			{
 				{
 					//BEGIN TEST
 
@@ -66,31 +77,38 @@ export namespace ION::Tests::Types::Collections {
 
 					for (size_t i = 0; i < 100; i++)
 					{
-						if (TestItem[i] != i * 945) {
-							throw ION::Core::Exception("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+						if (TestItem[i] != i * 945)
+						{
+							throw ION::Core::Exception ("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 						}
 					}
 
 					//END TEST
 				}
-				return Result(Result::ResultCode::SUCCESS, ION::Core::Exception("NO_ERROR"));
+				return Result (Result::ResultCode::SUCCESS, ION::Core::Exception ("NO_ERROR"));
 			}
-			catch (const ION::Core::Exception& e) {
-				return Result(Result::ResultCode::FAIL, e);
+			catch (const ION::Core::Exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, e);
 			}
-			catch (const std::exception& e) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception(e.what()));
+			catch (const std::exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (e.what ()));
 			}
-			catch (const char* e) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception(std::string(e)));
+			catch (const char* e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (std::string (e)));
 			}
-			catch (...) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception("UNKNOWN_ERROR"));
+			catch (...)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception ("UNKNOWN_ERROR"));
 			}
 		};
 
-		class LargeSet1 : public TestBase::Test {
-			virtual Result Invoke() override try {
+		class LargeSet1 : public TestBase::Test
+		{
+			virtual Result Invoke () override try
+			{
 				{
 					//BEGIN TEST
 
@@ -105,8 +123,9 @@ export namespace ION::Tests::Types::Collections {
 
 					for (size_t i = 0; i < MaxSize; i++)
 					{
-						if (TestItem[i] != i) {
-							throw ION::Core::Exception("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location(__FUNCSIG__, __FILE__, __LINE__));
+						if (TestItem[i] != i)
+						{
+							throw ION::Core::Exception ("VALIDATION_FAILURE", ION::Core::Compiler::Source::Location (__FUNCSIG__, __FILE__, __LINE__));
 						}
 					}
 
@@ -116,21 +135,25 @@ export namespace ION::Tests::Types::Collections {
 
 					//END TEST
 				}
-				return Result(Result::ResultCode::SUCCESS, ION::Core::Exception("NO_ERROR"));
+				return Result (Result::ResultCode::SUCCESS, ION::Core::Exception ("NO_ERROR"));
 			}
-			catch (const ION::Core::Exception& e) {
-				return Result(Result::ResultCode::FAIL, e);
+			catch (const ION::Core::Exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, e);
 			}
-			catch (const std::exception& e) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception(e.what()));
+			catch (const std::exception& e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (e.what ()));
 			}
-			catch (const char* e) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception(std::string(e)));
+			catch (const char* e)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception (std::string (e)));
 			}
-			catch (...) {
-				return Result(Result::ResultCode::FAIL, ION::Core::Exception("UNKNOWN_ERROR"));
+			catch (...)
+			{
+				return Result (Result::ResultCode::FAIL, ION::Core::Exception ("UNKNOWN_ERROR"));
 			}
 		};
-		
+
 	};
 }
