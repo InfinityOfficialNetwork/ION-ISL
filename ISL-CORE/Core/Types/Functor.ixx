@@ -8,15 +8,26 @@ export namespace ION::Core::Types
 	class Functor : public Object
 	{
 	public:
-		Functor (T (*Function)(Args...)) : Function (Function)
+		inline constexpr Functor (T (*Function)(Args...)) noexcept : _Function (Function)
 		{}
 
-		virtual T operator()(Args... args) const
+		inline constexpr Functor () noexcept : _Function (nullptr)
+		{}
+
+		inline constexpr Functor (const Functor& rhs) noexcept : _Function(rhs._Function)
+		{}
+
+		inline constexpr T Invoke (Args... args) const
 		{
-			return Function (args...);
+			return _Function (args...);
+		}
+
+		inline constexpr T operator()(Args... args) const
+		{
+			return Invoke(args...);
 		}
 
 	private:
-		T (*Function)(Args...);
+		T (*_Function)(Args...);
 	};
 }

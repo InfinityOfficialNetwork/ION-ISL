@@ -81,6 +81,7 @@
       <TranslateIncludes>true</TranslateIncludes>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -100,6 +101,7 @@
       <TranslateIncludes>true</TranslateIncludes>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,6 +121,7 @@
       <TranslateIncludes>true</TranslateIncludes>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,6 +141,7 @@
       <TranslateIncludes>true</TranslateIncludes>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,10 +155,6 @@
     <ClCompile Include="TestBase.ixx" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Program.ixx" />
-    <ClCompile Include="Tests\Types\Collections\ArrayTest.ixx" />
-    <ClCompile Include="Tests\Types\Collections\BasicLinkedListTest.ixx" />
-    <ClCompile Include="Tests\Types\Collections\LinkedListTest.ixx" />
-    <ClCompile Include="Tests\Types\Collections\StaticArrayTestixx.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ISL-CORE\ISL-CORE.vcxproj">

@@ -1,6 +1,6 @@
 export module ION.Tests.TestBase;
 
-import ION.Core.Exception;
+import ION.Core.LegacyException;
 import std;
 
 export namespace ION::Tests
@@ -60,9 +60,9 @@ export namespace ION::Tests
 				SUCCESS,
 				FAIL
 			} Code;
-			const ION::Core::Exception Exception;
+			const ION::Core::LegacyException LegacyException;
 
-			Result (ResultCode c, const ION::Core::Exception e) : Code (c), Exception (e)
+			Result (ResultCode c, const ION::Core::LegacyException e) : Code (c), LegacyException (e)
 			{}
 		};
 		struct Test

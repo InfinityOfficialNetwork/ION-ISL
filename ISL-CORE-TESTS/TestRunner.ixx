@@ -1,9 +1,5 @@
 export module ION.Tests.TestRunner;
 
-import ION.Tests.Types.Collections.StaticArrayTest;
-import ION.Tests.Types.Collections.ArrayTest;
-import ION.Tests.Types.Collections.BasicLinkedListTest;
-import ION.Tests.Types.Collections.LinkedListTest;
 import ION.Tests.TestBase;
 import std;
 
@@ -34,8 +30,8 @@ export namespace ION::Tests
 					if (Results[i].Code == TestBase::Result::ResultCode::FAIL)
 					{
 						std::cout << "			SUBTEST DETAILS:" << std::endl
-							<< "				" << Results[i].Exception.What () << std::endl
-							<< "				" << Results[i].Exception.Where () << std::endl;
+							<< "				" << Results[i].LegacyException.What () << std::endl
+							<< "				" << Results[i].LegacyException.Where () << std::endl;
 					}
 				}
 			}
@@ -44,10 +40,10 @@ export namespace ION::Tests
 		TestRunner ()
 		{
 			//AddTest();
-			AddTest (new ION::Tests::Types::Collections::StaticArrayTest ());
-			AddTest (new ION::Tests::Types::Collections::ArrayTest ());
-			AddTest (new ION::Tests::Types::Collections::BasicLinkedListTest ());
-			AddTest (new ION::Tests::Types::Collections::LinkedListTest ());
+			//AddTest (new ION::Tests::Types::Collections::StaticArrayTest ());
+			//AddTest (new ION::Tests::Types::Collections::ArrayTest ());
+			//AddTest (new ION::Tests::Types::Collections::BasicLinkedListTest ());
+			//AddTest (new ION::Tests::Types::Collections::LinkedListTest ());
 		}
 	};
 }

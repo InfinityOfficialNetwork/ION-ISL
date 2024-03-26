@@ -110,6 +110,7 @@
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
       <EnablePREfast>true</EnablePREfast>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +131,10 @@
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
       <EnablePREfast>true</EnablePREfast>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,6 +142,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -150,6 +156,7 @@
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
       <EnablePREfast>true</EnablePREfast>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,6 +177,10 @@
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
       <EnablePREfast>true</EnablePREfast>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalOptions>/experimental:constevalVfuncVtable %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,23 +188,40 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Clock\HighPrecisionTimestamp.ixx" />
+    <ClCompile Include="Core\Clock\LowPrecisionTimestamp.ixx" />
+    <ClCompile Include="Core\Clock\MidPrecisionTimestamp.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\ArithmeticAssignment\Addition_.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Addition.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Division.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Modulation.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Multiplication.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Subtraction.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Assignment.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Constructor\CopyConstructor.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Constructor\DefaultConstructor.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Base.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Constructor\MoveConstructor.ixx" />
+    <ClCompile Include="Core\Compiler\Introspection\TraitSets\Capabilities\Constructor.ixx" />
     <ClCompile Include="Core\Compiler\Source\Location.ixx" />
     <ClCompile Include="Core\Exception.ixx" />
+    <ClCompile Include="Core\IO\Filesystem\Path.ixx" />
+    <ClCompile Include="Core\LegacyException.ixx" />
     <ClCompile Include="Core\Memory\AllocationException.ixx" />
     <ClCompile Include="Core\Memory\Allocator.ixx" />
     <ClCompile Include="Core\Memory\BasicPointer.ixx" />
+    <ClCompile Include="Core\Memory\EmergencyAllocator.ixx" />
     <ClCompile Include="Core\Memory\Mallocator.ixx" />
-    <ClCompile Include="Core\Types\Collections\AdvancedLinkedList.ixx" />
-    <ClCompile Include="Core\Types\Collections\Array.ixx" />
     <ClCompile Include="Core.ixx" />
-    <ClCompile Include="Core\Types\Collections\BasicLinkedList.ixx" />
     <ClCompile Include="Core\Memory\SharedPointer.ixx" />
     <ClCompile Include="Core\Memory\UniquePointer.ixx" />
     <ClCompile Include="Core\Object.ixx" />
-    <ClCompile Include="Core\Types\Collections\LinkedList.ixx" />
-    <ClCompile Include="Core\Types\Collections\StaticArray.ixx" />
+    <ClCompile Include="Core\Platform\Windows\Win32Exception.ixx" />
+    <ClCompile Include="Core\Runtime\Reflection\Address.ixx" />
+    <ClCompile Include="Core\Runtime\Reflection\TypeInfo.ixx" />
     <ClCompile Include="Core\Types\Functor.ixx" />
     <ClCompile Include="main.ixx" />
   </ItemGroup>

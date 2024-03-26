@@ -24,7 +24,7 @@
     <ClCompile Include="Core\Memory\Allocator.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Exception.ixx">
+    <ClCompile Include="Core\LegacyException.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\Memory\AllocationException.ixx">
@@ -39,16 +39,7 @@
     <ClCompile Include="Core\Memory\Mallocator.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Types\Collections\AdvancedLinkedList.ixx">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Types\Collections\Array.ixx">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core.ixx">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Types\Collections\BasicLinkedList.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\Memory\SharedPointer.ixx">
@@ -57,13 +48,70 @@
     <ClCompile Include="Core\Memory\UniquePointer.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Types\Collections\StaticArray.ixx">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Types\Functor.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Types\Collections\LinkedList.ixx">
+    <ClCompile Include="Core\Exception.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Runtime\Reflection\TypeInfo.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Memory\EmergencyAllocator.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Clock\HighPrecisionTimestamp.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Clock\MidPrecisionTimestamp.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Clock\LowPrecisionTimestamp.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Runtime\Reflection\Address.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Platform\Windows\Win32Exception.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IO\Filesystem\Path.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Base.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Constructor\CopyConstructor.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Constructor\DefaultConstructor.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Constructor\MoveConstructor.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\TraitSets\Capabilities\Constructor.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Addition.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Subtraction.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Multiplication.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Division.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Arithmetic\Modulation.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\Assignment.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Compiler\Introspection\Traits\Capabilities\ArithmeticAssignment\Addition_.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
